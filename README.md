@@ -9,4 +9,8 @@
 -   help others that are having a hard time trying to solve the puzzles
 -   Solutions in Python!!!
 
+## Extras Folder
+
+-   In the extras folder you'll find some useful functions that were reused in more than one puzzle
+
 ### Thank you for reading :D
