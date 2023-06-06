@@ -26,8 +26,6 @@ def RNA_table_to_dict(file_path:str) -> dict:
     """
     file_content = open(file_path).read()
     
-    print(file_content)
-    
     dictionary = {}
     
     for i in range(len(file_content)):

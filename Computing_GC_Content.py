@@ -22,7 +22,7 @@ the GC-content of that string. Rosalind allows for a default error of 0.001
 in all decimal answers unless otherwise stated; please see the note on absolute 
 error below.
 """
-from Extras.fasta_parser import FASTA_to_dict
+from Extras.rosalind_parsers import FASTA_to_dict
 import sys
 
 DNA_strings = FASTA_to_dict(sys.argv[1])
