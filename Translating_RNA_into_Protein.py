@@ -13,7 +13,7 @@ Given: An RNA string s corresponding to a strand of mRNA (of length at most 10 k
 
 Return: The protein string encoded by s.
 """
-from Extras.rosalind_parsers import RNA_table_to_dict
+from Extras.rosalind_functions import RNA_table_to_dict
 import sys
 
 CODONS_TABLE = RNA_table_to_dict(sys.argv[2])

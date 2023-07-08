@@ -26,7 +26,7 @@ Given: A collection of DNA strings in FASTA format having total length at most 1
 
 Return: The adjacency list corresponding to O3 . You may return edges in any order.
 """
-from Extras.rosalind_parsers import FASTA_to_dict
+from Extras.rosalind_functions import FASTA_to_dict
 import sys
 
 K = 3

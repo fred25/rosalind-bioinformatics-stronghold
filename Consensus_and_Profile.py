@@ -38,7 +38,7 @@ in FASTA format.
 Return: A consensus string and profile matrix for the collection.
 (If several possible consensus strings exist, then you may return any one of them.)
 """
-from Extras.rosalind_parsers import FASTA_to_dict
+from Extras.rosalind_functions import FASTA_to_dict
 import sys
 
 DNAs = FASTA_to_dict(sys.argv[1])

@@ -25,7 +25,7 @@ the protein could have been translated, modulo 1,000,000.
 (Don't neglect the importance of the stop codon in protein translation.)
 """
 import sys
-from Extras.rosalind_parsers import RNA_table_to_dict
+from Extras.rosalind_functions import RNA_table_to_dict
 
 table = RNA_table_to_dict(sys.argv[2])
 

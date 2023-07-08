@@ -18,7 +18,7 @@ length at most 1 kbp each in FASTA format.
 Return: A longest common substring of the collection. 
 (If multiple solutions exist, you may return any single solution.)
 """
-from Extras.rosalind_parsers import FASTA_to_dict
+from Extras.rosalind_functions import FASTA_to_dict
 import sys
 
 data = FASTA_to_dict(sys.argv[1])
