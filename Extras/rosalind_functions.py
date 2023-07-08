@@ -5,7 +5,7 @@ def FASTA_to_dict(file_path:str) -> dict:
     """
     
     file_content = open(file_path).readlines()
-        
+    
     dictionary = {}
     
     current = ""
@@ -37,3 +37,20 @@ def RNA_table_to_dict(file_path:str) -> dict:
             dictionary[substring] = file_content[i+4]
     
     return dictionary
+
+def DNA_to_RNA(DNA:str) -> str:
+    return DNA.replace("T", "U")
+
+def translate_codon(codon:str, codon_table:dict) -> str:
+    
+    if len(codon) == 3 and codon in codon_table.keys():
+    
+        return codon_table[codon]
+    
+    return None
+
+def reverse_complement(DNA:str) -> str:
+    
+    base_pairs = {"A":"T", "T": "A", "G": "C", "C": "G"}
+    
+    return "".join([base_pairs[b] for b in reversed(DNA)])
