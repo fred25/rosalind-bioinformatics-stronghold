@@ -38,10 +38,32 @@ def RNA_table_to_dict(file_path:str) -> dict:
     
     return dictionary
 
+def mass_table_to_dict(filepath:str) -> dict:
+    """
+    Function that receives the path to a monoisotopic mass table in
+    Rosalind.info format and return a equivalent dict.
+    """
+    table = open("./Extras/Monoisotopic_mass_table.txt").readlines()
+
+    parsed_table = {}
+
+    for data in table:
+        parsed_table[data[0]] = float(data[4:].replace("\n", ""))
+
+    return parsed_table
+
 def DNA_to_RNA(DNA:str) -> str:
+    """
+    Function that receives a DNA string and return its translated
+    mRNA string
+    """
     return DNA.replace("T", "U")
 
 def translate_codon(codon:str, codon_table:dict) -> str:
+    """
+    Function that receives a codon string and returns its respective
+    amino-acid translated by a table passed as argument.
+    """
     
     if len(codon) == 3 and codon in codon_table.keys():
     
@@ -50,6 +72,9 @@ def translate_codon(codon:str, codon_table:dict) -> str:
     return None
 
 def reverse_complement(DNA:str) -> str:
+    """
+    Function that receives a DNA string and return its reverse complement DNA
+    """
     
     base_pairs = {"A":"T", "T": "A", "G": "C", "C": "G"}
     
