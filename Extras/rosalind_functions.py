@@ -1,3 +1,6 @@
+DNA_BASES = {"A", "T", "C", "G"}
+
+
 def FASTA_to_dict(file_path: str) -> dict:
     """
     Function that receive a text file of DNA in FASTA format and returns
