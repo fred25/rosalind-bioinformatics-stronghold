@@ -18,7 +18,6 @@ error of 0.001.
 
 from Extras.rosalind_functions import FASTA_to_dict, hamming_distance
 import sys
-import numpy as np
 
 sequences = list(FASTA_to_dict(sys.argv[1]).values())
 
