@@ -31,9 +31,4 @@ from math import factorial
 
 n = int(input("Input n: "))
 
-total = 0
-
-for i in range(1, n + 1):
-    total += factorial(n) // (factorial(i) * factorial(n - i))
-
-print((total + 1) % 1000000)
+print((2**n) % 1000000)
