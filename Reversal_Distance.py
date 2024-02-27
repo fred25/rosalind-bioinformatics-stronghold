@@ -83,26 +83,28 @@ def greedy_algorithm(perm1: list, perm2: list) -> int:
         current_perms = new_perms
 
 
-reversal_distances = []
-data = []
 
-current = []
-with open(sys.argv[1]) as file:
-    for line in file.readlines():
-        if line[0].isnumeric():
-            current.append(tuple(map(int, line.replace("\n", "").split(" "))))
+if __name__ == '__main__':
+    reversal_distances = []
+    data = []
+
+    current = []
+    with open(sys.argv[1]) as file:
+        for line in file.readlines():
+            if line[0].isnumeric():
+                current.append(tuple(map(int, line.replace("\n", "").split(" "))))
+            else:
+                data.append(current)
+                current = []
+
+    data.append(current)
+
+    for p1, p2 in data:
+        if p1 != p2:
+            reversal_distances.append(
+                min(greedy_algorithm(p1, p2), greedy_algorithm(p2, p1))
+            )
         else:
-            data.append(current)
-            current = []
+            reversal_distances.append(0)
 
-data.append(current)
-
-for p1, p2 in data:
-    if p1 != p2:
-        reversal_distances.append(
-            min(greedy_algorithm(p1, p2), greedy_algorithm(p2, p1))
-        )
-    else:
-        reversal_distances.append(0)
-
-print(*reversal_distances)
+    print(*reversal_distances)
