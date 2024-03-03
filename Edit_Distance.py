@@ -15,13 +15,6 @@ Given: Two protein strings s and t in FASTA format (each of length at most 1000 
 
 Return: The edit distance dE(s,t).
 """
-
-import sys
-from Extras.rosalind_functions import FASTA_to_dict
-
-data = list(FASTA_to_dict(sys.argv[1]).values())
-
-
 # Algorithm from Wikipedia
 def lev_dist(a: str, b: str) -> int:
     d = [[0 for y in range(len(b))] for x in range(len(a))]
@@ -40,4 +33,10 @@ def lev_dist(a: str, b: str) -> int:
     return d[len(a) - 1][len(b) - 1]
 
 
-print(lev_dist(" " + data[0], " " + data[1]))
+if __name__ == "__main__":
+    import sys
+    from Extras.rosalind_functions import FASTA_to_dict
+
+    data = list(FASTA_to_dict(sys.argv[1]).values())
+
+    print(lev_dist(" " + data[0], " " + data[1]))
