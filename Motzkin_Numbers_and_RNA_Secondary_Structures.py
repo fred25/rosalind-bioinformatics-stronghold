@@ -31,14 +31,6 @@ Return: The total number of noncrossing matchings of basepair edges in the
 bonding graph of s, modulo 1,000,000.
 """
 
-import sys
-
-DNA = ""
-
-with open(sys.argv[1]) as file:
-    DNA = file.readlines()[1].replace("\n", "")
-
-
 def motzkin_numbers(s: str, memo={}) -> int:
     if len(s) <= 1:
         return 1
@@ -52,5 +44,13 @@ def motzkin_numbers(s: str, memo={}) -> int:
     memo[s] = n
     return n
 
+if __name__ == "__main__":
+    import sys
 
-print(motzkin_numbers(DNA) % 1000000)
+    DNA = ""
+
+    with open(sys.argv[1]) as file:
+        DNA = file.readlines()[1].replace("\n", "")
+
+
+    print(motzkin_numbers(DNA) % 1000000)
